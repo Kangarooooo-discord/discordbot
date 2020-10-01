@@ -197,7 +197,7 @@ async def on_message(message):
                     embed4.set_footer(text='Game-Forum Discord Bot')
                     await message.channel.send(embed=embed4)
                     await asyncio.sleep(3)
-                    deleted = await message.channel.purge(limit=1)
+                    await message.channel.purge(limit=1)
                 else:
                     await message.channel.send('Bitte gib eine gültige Zahl ein!')
             else:
@@ -220,8 +220,6 @@ async def on_message(message):
             embed5.add_field(name='Meine Antwort', value='{}'.format(random.choice(antworten)))
             embed5.set_thumbnail(url='https://game-forum.net/wp-content/uploads/discord/support.png')
             embed5.set_footer(text='Game-Forum Discord Bot')
-
-            await message.channel.purge(limit=1, check=is_not_pinned)
             await message.channel.send(embed = embed5)
         else:
             await message.channel.send("Bitte gib eine Frage an!")
@@ -475,4 +473,4 @@ async def on_member_join(member): #Willkommennachricht und Rollenvergabe für Us
 
 
 
-client.run('Your Bot Token!')
+client.run('Your Bot Token')
